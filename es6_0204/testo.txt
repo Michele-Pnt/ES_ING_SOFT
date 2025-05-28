@@ -1,0 +1,58 @@
+Esercizio UML e Implementazione Java – Sistema di Transazioni Bancarie con Astrazione
+Una banca vuole sviluppare un sistema software per la gestione delle transazioni bancarie. Il sistema deve permettere ai clienti di effettuare operazioni come depositi, prelievi e bonifici. Ogni transazione deve essere registrata, e il sistema deve garantire che le operazioni siano eseguite correttamente, rispettando eventuali limiti di saldo o altre regole della banca.
+Per garantire un'architettura estendibile e riutilizzabile, il sistema deve essere progettato utilizzando classi astratte o interfacce per definire le operazioni bancarie.
+
+Parte 1: Modellazione UML
+Si richiede di progettare il sistema attraverso i seguenti diagrammi UML:
+Diagramma delle classi
+
+
+Identificare gli oggetti principali coinvolti nel sistema e le loro relazioni.
+
+
+Definire una classe astratta o un'interfaccia che rappresenti il concetto generico di "Transazione", dalla quale deriveranno operazioni specifiche come Deposito, Prelievo e Bonifico.
+
+
+Specificare attributi e metodi comuni a tutte le transazioni.
+
+
+Indicare le associazioni tra le transazioni e il conto bancario.
+
+
+Diagramma degli stati
+
+
+Rappresentare il ciclo di vita di una transazione (ad esempio, da "In elaborazione" a "Completata" o "Fallita").
+
+
+Diagramma di sequenza
+
+
+Modellare il flusso di interazioni tra gli oggetti principali in uno scenario di utilizzo tipico, come l'esecuzione di un bonifico tra due conti.
+
+
+
+Parte 2: Implementazione in Java
+Dopo aver progettato il sistema con UML, implementare il diagramma delle classi in Java. L'implementazione deve includere:
+Una classe astratta o un’interfaccia che definisca il comportamento comune delle transazioni bancarie.
+
+
+Classi concrete per operazioni specifiche come Deposito, Prelievo e Bonifico, che ereditano dalla classe astratta o implementano l’interfaccia.
+
+
+Una classe per il Conto Bancario, che mantiene il saldo e permette di eseguire transazioni.
+
+
+Un semplice metodo main che simuli almeno un'operazione significativa del sistema, come l'esecuzione di un bonifico tra due conti.
+
+
+
+Consegna
+File contenente i diagrammi UML.
+
+
+Codice Java implementato.
+
+
+Una breve relazione che descriva le scelte progettuali e l'uso dell'astrazione.
+

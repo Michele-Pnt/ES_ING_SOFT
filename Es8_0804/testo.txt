@@ -1,0 +1,30 @@
+Esercizio UML per una classe di ingegneri informatici (3° anno)
+Un'azienda di autonoleggio vuole sviluppare un sistema software per gestire il noleggio dei veicoli. 
+Il sistema deve permettere di gestire i clienti, i veicoli disponibili, le prenotazioni e il processo di noleggio.
+ Ogni veicolo può essere noleggiato solo se è disponibile, e ogni cliente può effettuare più prenotazioni. 
+ Il sistema deve anche gestire il pagamento e lo stato delle prenotazioni.
+
+Requisiti del sistema
+Ogni cliente deve essere registrato nel sistema con un nome, un cognome, un ID univoco e un metodo di pagamento.
+I veicoli devono essere catalogati con un ID, una marca, un modello, una targa e uno stato 
+(ad esempio, "Disponibile", "Noleggiato", "In manutenzione").
+Una prenotazione deve contenere un ID, il cliente che l'ha effettuata, il veicolo prenotato, la data di inizio
+ e fine noleggio, e lo stato della prenotazione (ad esempio, "In attesa", "Confermata", "Completata", "Annullata").
+Il sistema deve gestire il pagamento associato a una prenotazione, con un importo calcolato in base alla durata del
+ noleggio e al tipo di veicolo.
+I dipendenti dell'azienda possono aggiornare lo stato dei veicoli (ad esempio, da "In manutenzione" a 
+"Disponibile") e confermare o annullare le prenotazioni.
+Ogni veicolo può passare attraverso diversi stati durante il suo ciclo di vita (ad esempio, "Disponibile", 
+"Noleggiato", "In manutenzione").
+Compiti
+Disegna un diagramma delle classi UML che rappresenti il sistema descritto sopra. Assicurati di includere almeno
+ 6 classi e di modellare correttamente le relazioni tra di esse (associazioni, aggregazioni, composizioni, ecc.).
+Disegna un diagramma degli stati UML per rappresentare il ciclo di vita di un veicolo, includendo tutti gli 
+stati possibili e le transizioni tra di essi.
+Disegna un diagramma delle sequenze UML per rappresentare il caso d'uso "Prenotazione di un veicolo",
+ che includa le seguenti fasi:
+Il cliente seleziona un veicolo disponibile.
+Il cliente effettua una prenotazione.
+Il sistema calcola il costo del noleggio.
+Il cliente effettua il pagamento.
+Il sistema conferma la prenotazione.

@@ -1,0 +1,65 @@
+Un'azienda di vendita online vuole sviluppare un sistema software per gestire la propria piattaforma e-commerce. Il sistema deve permettere agli utenti di registrarsi e autenticarsi, acquistare prodotti e gestire i pagamenti. Gli amministratori devono poter gestire il catalogo dei prodotti, modificando prezzi e disponibilità.
+
+Gli utenti possono effettuare ordini composti da uno o più prodotti, specificando la quantità desiderata. Ogni ordine ha un costo totale calcolato in base ai prodotti scelti e deve essere associato a un pagamento. Il pagamento può avvenire tramite carta di credito o PayPal e deve avere un esito (Riuscito o Fallito).
+
+Una volta effettuato il pagamento, l'ordine viene elaborato per la spedizione. Ogni ordine ha uno stato che può essere "In Elaborazione", "Spedito" o "Consegnato". La spedizione è associata a un corriere e a un numero di tracking.
+
+Si richiede di realizzare il diagramma UML delle classi per rappresentare il sistema, definendo le classi necessarie, le loro relazioni (associazioni, ereditarietà, aggregazioni o composizioni) e i metodi principali.
+@startuml
+class Utente {
+  - ID: int
+  - nome: String
+  - email: String
+  + registrarsi(): void
+  + effettuareOrdine(ordine: Ordine): void
+}
+
+class Cliente {
+  + visualizzareProdotti(): void
+}
+
+class Amministratore {
+  + aggiungereProdotto(prodotto: Prodotto): void
+  + rimuovereProdotto(prodotto: Prodotto): void
+}
+
+class Prodotto {
+  - ID: int
+  - nome: String
+  - descrizione: String
+  - prezzo: double
+  - quantitaDisponibile: int
+  + aggiornareStock(qta: int): void
+}
+
+class Ordine {
+  - ID: int
+  - stato: String
+  + aggiungereProdotto(prodotto: Prodotto, qta: int): void
+  + confermareOrdine(): void
+}
+
+class Pagamento {
+  - ID: int
+  - metodo: String
+  - esito: String
+  + elaborarePagamento(): boolean
+}
+
+class Spedizione {
+  - ID: int
+  - corriere: String
+  - numeroTracking: String
+  + tracciaSpedizione(): String
+}
+
+Utente <|-- Cliente
+Utente <|-- Amministratore
+
+Cliente "1" -- "0..*" Ordine : effettua
+Ordine "1" -- "1" Pagamento : ha
+Ordine "1" -- "1" Spedizione : è associato a
+Ordine "1" -- "0..*" Prodotto : contiene
+Amministratore "1" -- "0..*" Prodotto : gestisce
+
+@enduml

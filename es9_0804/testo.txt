@@ -1,0 +1,23 @@
+Esercizio UML e Implementazione in Java
+Una scuola vuole sviluppare un sistema software per gestire i corsi, gli studenti e gli insegnanti.
+ Il sistema deve permettere agli studenti di iscriversi ai corsi, agli insegnanti di assegnare voti agli studenti e alla scuola di monitorare
+  lo stato dei corsi.
+
+Requisiti:
+Gli studenti devono poter visualizzare l'elenco dei corsi disponibili e iscriversi a un corso.
+Ogni corso è tenuto da un insegnante e ha un numero massimo di studenti che possono iscriversi.
+Gli insegnanti devono poter assegnare voti agli studenti iscritti ai loro corsi.
+Il sistema deve permettere di visualizzare lo stato di un corso, inclusi gli studenti iscritti e i voti assegnati.
+Gli studenti possono visualizzare i voti ricevuti per ciascun corso.
+Compiti:
+Diagramma UML delle classi: Disegna un diagramma UML delle classi che rappresenti il sistema descritto. 
+Identifica le classi principali, le loro relazioni e i metodi principali.
+Diagramma UML di sequenza: Disegna un diagramma UML di sequenza che rappresenti il processo di iscrizione di uno studente a un corso.
+Diagramma UML degli stati: Disegna un diagramma UML degli stati per rappresentare il ciclo di
+ vita di un corso (ad esempio: aperto per iscrizioni, in corso, completato
+Implementazione in Java: Implementa il sistema in Java seguendo il diagramma UML delle classi. Assicurati di includere:
+Una classe per rappresentare gli studenti.
+Una classe per rappresentare gli insegnanti.
+Una classe per rappresentare i corsi.
+Una classe per gestire il sistema scolastico.
+Metodi per iscrivere studenti ai corsi, assegnare voti e visualizzare lo stato dei corsi.

@@ -1,0 +1,55 @@
+Un'azienda di logistica vuole sviluppare un sistema per gestire le spedizioni internazionali. Il sistema deve permettere di tracciare i pacchi, i clienti che li spediscono e i corrieri che li consegnano. Ogni pacco è associato a un cliente mittente e a un cliente destinatario. Inoltre, ogni pacco deve essere tracciato attraverso diverse tappe di spedizione, ognuna delle quali registra la posizione attuale del pacco, la data e l'ora di arrivo in quella posizione.
+
+Ogni corriere è responsabile di una o più spedizioni e deve essere registrato nel sistema con un ID univoco, un nome, un cognome e un numero di telefono. I pacchi hanno un codice univoco, un peso, una dimensione (lunghezza, larghezza, altezza) e un valore dichiarato. Ogni pacco è associato a una spedizione, che include informazioni sullo stato della spedizione (ad esempio, "In transito", "Consegnato") e il corriere responsabile.
+
+Il sistema deve garantire che:
+
+Ogni pacco sia associato a una spedizione.
+Ogni spedizione sia tracciata attraverso una serie di tappe.
+Ogni tappa registri la posizione del pacco, la data e l'ora di arrivo.
+Ogni corriere possa gestire più spedizioni.
+Ogni cliente possa essere sia mittente che destinatario di più pacchi.
+
+SOLUZIONE:
+@startuml
+class Cliente {
+  - id: int
+  - nome: String
+  - cognome: String
+  - email: String
+  - indirizzo: String
+}
+
+class Corriere {
+  - id: int
+  - nome: String
+  - cognome: String
+  - telefono: String
+}
+
+class Pacco {
+  - codice: int
+  - peso: double
+  - lunghezza: double
+  - larghezza: double
+  - altezza: double
+  - valoreDichiarato: double
+}
+
+class Spedizione {
+  - id: int
+  - stato: String
+}
+
+class Tappa {
+  - id: int
+  - posizione: String
+  - dataOraArrivo: Date
+}
+
+Cliente "1" -- "0..*" Pacco : invia
+Cliente "1" -- "0..*" Pacco : riceve
+Pacco "1" -- "1" Spedizione : è associato a
+Spedizione "1" -- "0..*" Tappa : è tracciata da
+Spedizione "1" -- "1" Corriere : è gestita da
+@enduml

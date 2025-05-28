@@ -1,0 +1,72 @@
+Descrizione del problema:
+Un'università vuole sviluppare un sistema per gestire la propria biblioteca. Il sistema deve permettere di tracciare i libri disponibili, gli studenti che li prendono in prestito e i bibliotecari che gestiscono il sistema. Ogni libro ha un codice univoco, un titolo, un autore, una casa editrice, un anno di pubblicazione e una categoria (ad esempio "Romanzo", "Manuale", "Saggio"). Gli studenti che utilizzano il sistema sono identificati da un numero di matricola univoco e sono registrati con il loro nome, cognome, indirizzo email e corso di laurea. I bibliotecari, invece, sono identificati da un ID univoco e registrati con il loro nome, cognome e numero di telefono.
+
+Il sistema deve gestire i prestiti dei libri. Ogni prestito è associato a uno studente e può includere uno o più libri. Per ogni prestito devono essere registrate la data di inizio, la data di scadenza e, se presente, la data di restituzione. Inoltre, se uno studente restituisce un libro in ritardo, il sistema deve registrare una sanzione. Ogni sanzione è associata a un prestito specifico e include l'importo della sanzione e la data di pagamento (se la sanzione è stata pagata).
+
+Il sistema deve garantire che un libro possa essere preso in prestito solo se è disponibile. Inoltre, uno studente non può avere più di tre prestiti attivi contemporaneamente. I bibliotecari sono responsabili della gestione dei prestiti e possono monitorare lo stato dei libri e delle sanzioni. Ogni prestito è gestito da un bibliotecario specifico.
+
+Compiti richiesti:
+Analizza il dominio del problema e identifica le entità, gli attributi e le relazioni necessarie per rappresentare il sistema.
+Disegna il diagramma ER che rappresenta il sistema, includendo:
+Le entità e i loro attributi.
+Le relazioni tra le entità, con le cardinalità (es. 1:N, N:M).
+Eventuali vincoli di integrità (es. chiavi primarie e chiavi esterne).
+Fornisci una breve descrizione del diagramma ER, spiegando le scelte progettuali.
+Requisiti aggiuntivi:
+Ogni libro può essere preso in prestito più volte, ma ogni prestito è associato a uno specifico studente.
+Uno studente può avere più prestiti attivi contemporaneamente, ma non più di tre.
+Una sanzione può essere applicata solo se il prestito è scaduto.
+Ogni prestito è gestito da un bibliotecario, che può monitorare più prestiti contemporaneamente.
+
+
+
+UML
+
+@startuml
+class Libro {
+  - ID: int
+  - titolo: String
+  - autore: String
+  - casaEditrice: String
+  - annoPubblicazione: int
+  - categoria: String
+}
+
+class Studente {
+  - matricola: int
+  - nome: String
+  - cognome: String
+  - email: String
+  - corsoDiLaurea: String
+}
+
+class Bibliotecario {
+  - ID: int
+  - nome: String
+  - cognome: String
+  - telefono: String
+}
+
+class Prestito {
+  - ID: int
+  - dataInizio: Date
+  - dataScadenza: Date
+  - dataRestituzione: Date
+}
+
+class Sanzione {
+  - ID: int
+  - importo: double
+  - dataPagamento: Date
+}
+
+class Prestito_Libro {
+  - prestitoID: int
+  - libroID: int
+}
+
+Studente "1" -- "0..*" Prestito : effettua
+Bibliotecario "1" -- "0..*" Prestito : gestisce
+Prestito "1" -- "0..*" Libro : include
+Prestito "1" -- "0..1" Sanzione : genera
+@enduml

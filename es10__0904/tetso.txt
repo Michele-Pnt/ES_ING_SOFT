@@ -1,0 +1,43 @@
+Un'azienda di gestione eventi vuole sviluppare un sistema software per organizzare e monitorare eventi. 
+Il sistema deve permettere di gestire gli eventi, i partecipanti, i biglietti, i pagamenti e il personale che lavora agli eventi. Ogni evento può avere più partecipanti e più membri del personale assegnati. Il sistema deve anche gestire lo stato degli eventi e dei biglietti.
+
+Requisiti del sistema
+Ogni evento deve essere registrato nel sistema con un ID, un nome, una data, una descrizione e uno stato (ad esempio, "Pianificato", "In corso", "Completato", "Annullato").
+I partecipanti devono essere registrati con un ID, un nome, un cognome e un indirizzo email.
+I biglietti devono essere associati a un evento e a un partecipante, e devono avere un ID, un prezzo e uno stato (ad esempio, "Valido", "Usato", "Annullato").
+Il sistema deve gestire i pagamenti associati ai biglietti, con un importo e un metodo di pagamento.
+Il personale deve essere registrato con un ID, un nome, un ruolo (ad esempio, "Organizzatore", "Sicurezza") e deve essere assegnato a uno o più eventi.
+Ogni evento può passare attraverso diversi stati durante il suo ciclo di vita (ad esempio, "Pianificato", "In corso", "Completato", "Annullato").
+Compiti
+Disegna un diagramma delle classi UML che rappresenti il sistema descritto sopra. Assicurati di includere almeno 6 classi e di modellare correttamente le relazioni tra di esse (associazioni, aggregazioni, composizioni, ecc.).
+Disegna un diagramma degli stati UML per rappresentare il ciclo di vita di un evento, includendo tutti gli stati possibili e le transizioni tra di essi.
+Disegna un diagramma delle sequenze UML per rappresentare il caso d'uso "Acquisto di un biglietto", che includa le seguenti fasi:
+Il partecipante seleziona un evento.
+Il partecipante acquista un biglietto.
+Il sistema calcola il costo del biglietto.
+Il partecipante effettua il pagamento.
+Il sistema conferma l'acquisto e genera un biglietto valido.
+Caso d'uso: Acquisto di un biglietto
+Descrizione del caso d'uso
+Un partecipante vuole acquistare un biglietto per un evento. Il partecipante accede al sistema, seleziona un evento e procede con l'acquisto del biglietto. Il sistema calcola il costo del biglietto e verifica la disponibilità. Il partecipante effettua il pagamento e il sistema genera un biglietto valido. Se il pagamento non va a buon fine, il biglietto non viene generato.
+
+Attori coinvolti
+Partecipante
+Sistema di gestione eventi
+Flusso principale
+Il partecipante accede al sistema e visualizza gli eventi disponibili.
+Il partecipante seleziona un evento e richiede l'acquisto di un biglietto.
+Il sistema calcola il costo del biglietto.
+Il partecipante effettua il pagamento.
+Il sistema genera un biglietto valido e lo associa al partecipante e all'evento.
+Flusso alternativo
+Se il pagamento non va a buon fine, il sistema notifica il partecipante e il biglietto non viene generato.
+Diagramma degli stati UML
+Ciclo di vita di un evento
+Stato iniziale: "Pianificato".
+Transizione a "In corso" quando l'evento inizia.
+Transizione a "Completato" quando l'evento termina con successo.
+Transizione a "Annullato" se l'evento viene cancellato prima di iniziare.
+Stato finale: "Completato" o "Annullato".
+Obiettivo
+Progetta e implementa un sistema software che soddisfi i requisiti sopra descritti. Assicurati che il codice sia ben strutturato e che segua i principi della programmazione orientata agli oggetti.
